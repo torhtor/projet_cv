@@ -1,0 +1,451 @@
+@import 'responsive';
+@keyframes picture {
+  0% {filter: blur(5px);
+  -webkit-filter: blur(5px);}
+  100% {filter: blur(0);
+    -webkit-filter: blur(0)}
+}
+@keyframes sloganh1 {
+  0% {left: 10%;}
+  100% {left: 20%;}
+}
+@keyframes sloganh2 {
+  0% {left: 45%;
+  filter: blur(5px);
+    -webkit-filter: blur(5px);}
+  100%{left: 21%;
+  filter: blur(0);
+    -webkit-filter: blur(0);}
+}
+@keyframes sloganh3 {
+  0% {transform: scale(2);
+    opacity: 0;
+  }
+  100%{transform: scale(1);
+    opacity: 1;
+  }
+}
+@font-face {
+  font-family: 'Myriad Pro Regular';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Myriad Pro Regular'), url('myriad-pro-cufonfonts-webfont/MYRIADPRO-REGULAR.woff') format('woff');
+}
+@font-face {
+  font-family: 'Myriad Pro Light';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Myriad Pro Light'), url('myriad-pro-cufonfonts-webfont/MyriadPro-Light.woff') format('woff');
+}
+//variables
+$body-font: "georgia serif";
+$html-size: 14px;
+$font-plus:1.2rem;
+$title-font: "Myriad Pro Regular";
+$light-font: "Myriad Pro Light";
+$body-color: #f7f8f3;
+$a-color: #c03a17;
+$a-hover: #d3c69c;
+$h3-color: #82361f;
+$ba-color: #bf3a17;
+$menu-color: #ebead8;
+$button-color: #f8931d;
+$footer-color: #dbd5bb;
+$footer-a: #5b594c;
+$body-size: 1150px;
+$content: 920px;
+$column: 30%;
+$ul: url("img/puce.png");
+$classic: row nowrap;
+$width-a: 20%;
+$padding: 20px;
+$border: 4px #eae5d2 solid;
+$border-dark: 4px #cdbd8a solid;
+//fin variables
+//placeholder
+%flex{
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+}
+%webkit{
+  -moz-animation-fill-mode: forwards;
+  -webkit-animation-fill-mode: forwards;
+  -o-animation-fill-mode: forwards;
+}
+%wpicture{
+    -moz-animation: picture 1.5s;
+    -o-animation: picture 1.5s;
+    -webkit-animation: picture 1.5s;
+  }
+%wsloganh1{
+  -moz-animation: sloganh1 1s;
+  -o-animation: sloganh1 1s;
+  -webkit-animation: sloganh1 1s;
+}
+%wsloganh2{
+  -moz-animation: sloganh2 1.5s;
+  -o-animation: sloganh2 1.5s;
+  -webkit-animation: sloganh2 1.5s;
+}
+%wsloganh3{
+   -moz-animation: sloganh3 2s;
+   -o-animation: sloganh3 2s;
+   -webkit-animation: sloganh3 2s;
+ }
+//fin placeholder
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: $html-size;
+}
+body{
+  font-family: $body-font;
+  background: $body-color;
+}
+h1, h2, h3{
+  font-family: $title-font;
+}
+h3{
+  color: $h3-color;
+}
+a {
+  color: $a-color;
+  transition: all .3s;
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+ul {
+  list-style-type: none;
+  list-style-image: $ul;
+}
+.gabari{
+  max-width: $body-size;
+  margin: auto;
+  display: flex;
+  flex-flow: column nowrap;
+  @include mobile(768px);
+}
+#head{
+  display: flex;
+  width: $content;
+  margin: auto;
+  margin-top: 30px;
+  flex-flow: $classic;
+  justify-content: space-between;
+  @include mobile(768px);
+  h2{
+    width: $width-a;
+    @include mobile(768px){
+      width: 50%;
+    }
+  }
+  a{
+    display: block;
+    width: 100%;
+    text-transform: uppercase;
+    background: $ba-color;
+    color: $body-color;
+    text-decoration: none;
+    padding: 15px;
+    font-family: $light-font;
+    font-size: 2rem;
+    border-bottom: 2px $body-color solid;
+    }
+  p{
+    font-size: $font-plus;
+    font-style: italic;
+    align-self: center;
+    @include mobile(768px) {
+      text-align: right;
+      padding-right: 5px;
+    }
+  }
+  span{
+    font-size: $font-plus;
+    color: $h3-color;
+  }
+}
+#menu {
+  background: $menu-color;
+  margin: auto;
+  @include hover($hover: true);
+  @include mobile(768px);
+  @include tablette(1024px){
+    width: 100%;
+  }
+  &:hover{
+    @include hover($hover: false);
+  }
+  ul {
+    @extend %flex;
+    list-style-image: none;
+    width: $content;
+    margin: auto;
+    @include mobile(768px);
+
+    li{
+      padding: 20px 0;
+      width: $width-a;
+      text-align: center;
+      border-left: 2px $body-color solid;
+      &:nth-last-child(1){
+        border-right: 2px $body-color solid;
+      }
+      &:hover{
+        background: $a-hover;
+      }
+      a{
+        color: #000;
+        text-decoration: none;
+        padding: 20px 30px;
+        font-size: 0.9rem;
+        @include mobile(768px) {
+          padding: 0;
+        }
+        &:hover{
+        color: #fff;
+        }
+      }
+    }
+  }
+}
+#header {
+  display: flex;
+  flex-flow: $classic;
+  justify-content: flex-end;
+  @include mobile(768px){
+    flex-direction: column;
+  }
+    #h1 {
+      color: #9f6756;
+      position: absolute;
+      padding-top: 35px;
+      top: 17%;
+      left: 10%;
+      font-size: 1.5rem;
+      font-family: $light-font;
+      animation: sloganh1 1s;
+      animation-fill-mode: forwards;
+      @extend %webkit;
+      @extend %wsloganh1;
+      @include mobile(768px){
+        width: 50%;
+        position: relative;
+      }
+    }
+    #h2 {
+      position: absolute;
+      top: 22%;
+      left: 45%;
+      font-size: 4.5rem;
+      font-weight: bold;
+      font-family: $light-font;
+      filter: blur(5px);
+      animation: sloganh2 1.5s;
+      animation-fill-mode: forwards;
+      @extend %webkit;
+      @extend %wsloganh2;
+      @include mobile(768px){
+        width: 50%;
+        position: relative;
+      }
+      @include tablette(1024px){
+        top: 23.5%;
+      }
+    }
+    #h3 {
+      color: $ba-color;
+      position: absolute;
+      top: 27%;
+      left: 25%;
+      font-size: 4.5rem;
+      font-weight: bold;
+      font-family: $light-font;
+      animation: sloganh3 2s;
+      animation-fill-mode: forwards;
+      @extend %webkit;
+      @extend %wsloganh3;
+      @include mobile(768px){
+        width: 50%;
+        position: relative;
+      }
+      @include tablette(1024px){
+        top: 29%;
+      }
+    }
+    #h4 {
+      position: absolute;
+      top: 33%;
+      left: 23%;
+      font-size: 1.6rem;
+      font-family: $light-font;
+      filter: blur(5px);
+      animation: picture 1.5s;
+      animation-fill-mode: forwards;
+      @extend %webkit;
+      @extend %wpicture;
+      @include mobile(768px){
+        width: 50%;
+        position: relative;
+      }
+      @include tablette(1024px){
+        top: 36%;
+      }
+    }
+  img{
+    padding-right: 15%;
+    filter: blur(5px);
+    animation: picture 1.5s;
+    animation-fill-mode: forwards;
+    @extend %webkit;
+    @extend %wpicture;
+    @include mobile(768px){
+      padding: 0;
+    }
+    @include tablette(1024px){
+      padding-right: 10%;
+    }
+  }
+}
+main {
+  background: $menu-color;
+  border-top: 4px #e2e1cf solid;
+}
+#content{
+  @extend %flex;
+  width: $content;
+  margin: auto;
+  @include mobile(768px){
+    flex-direction: column;
+  }
+  #article{
+    width: $column;
+    padding: 35px 20px;
+    @include mobile(768px){
+      padding: 20px;
+    }
+    p{
+      padding-top: $padding;
+    }
+    figure{
+      display: flex;
+      flex-flow: column wrap;
+      height: 91px;
+      width: 30%;
+      padding-top: 20px;
+      figcaption{
+        height: 15px;
+        padding: 10px;
+      }
+      a{
+        padding: 3px 10px;
+      }
+    }
+  }
+  #choose {
+    width: $column;
+    padding: 35px 20px;
+    @include mobile(768px){
+      padding: 20px;
+    }
+    #bold {
+      font-weight: bold;
+    }
+    p{
+      padding-top: $padding;
+    }
+  }
+  #news {
+    width: $column;
+    padding: 35px 20px;
+    @include mobile(768px){
+      padding: 20px;
+    }
+    ul{
+      padding-top: $padding;
+    }
+    li{
+      padding: 5px;
+    }
+  }
+}
+form{
+  background: $ba-color;
+}
+fieldset{
+  border: none;
+  padding: 10px 0 10px 10px;
+  a{
+    color: #fff;
+  }
+}
+label{
+  display: block;
+  color: #fff;
+  font-family: $title-font;
+  font-size: 1.5rem;
+}
+input{
+  display: inline-block;
+}
+input[type=url] {
+  border: 1px #fff solid;
+  border-radius: 4px;
+  width: 75%;
+}
+input[type=submit] {
+  background: $button-color;
+  color: #fff;
+  padding: 2px 10px;
+  border: none;
+  border-radius: 4px;
+}
+footer{
+  background: $footer-color;
+  @include mobile(768px);
+}
+#footer{
+  @extend %flex;
+  width: $content;
+  margin: auto;
+  @include mobile(768px) {
+    flex-direction: column;
+  }
+}
+#solutions{
+  width: $column;
+  margin: auto;
+  padding: 30px 20px;
+  @include mobile(768px);
+  ul{
+    padding: 20px 0;
+    li{
+      padding: 4px;
+    }
+  }
+}
+#services {
+  @extend #solutions;
+}
+#press{
+  @extend #solutions;
+}
+.link{
+  color: $footer-a;
+  margin: 10px 0;
+}
+#copy{
+  background: #fff;
+  width: 100%;
+  p{
+    padding-left: 13%;
+    height: 80px;
+    line-height: 80px;
+  }
+}

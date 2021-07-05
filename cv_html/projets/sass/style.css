@@ -1,0 +1,525 @@
+@keyframes picture {
+  0% {
+    filter: blur(5px);
+    -webkit-filter: blur(5px);
+  }
+  100% {
+    filter: blur(0);
+    -webkit-filter: blur(0);
+  }
+}
+@keyframes sloganh1 {
+  0% {
+    left: 10%;
+  }
+  100% {
+    left: 20%;
+  }
+}
+@keyframes sloganh2 {
+  0% {
+    left: 45%;
+    filter: blur(5px);
+    -webkit-filter: blur(5px);
+  }
+  100% {
+    left: 21%;
+    filter: blur(0);
+    -webkit-filter: blur(0);
+  }
+}
+@keyframes sloganh3 {
+  0% {
+    transform: scale(2);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+@font-face {
+  font-family: "Myriad Pro Regular";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Myriad Pro Regular"), url("myriad-pro-cufonfonts-webfont/MYRIADPRO-REGULAR.woff") format("woff");
+}
+@font-face {
+  font-family: "Myriad Pro Light";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Myriad Pro Light"), url("myriad-pro-cufonfonts-webfont/MyriadPro-Light.woff") format("woff");
+}
+#footer, #content, #menu ul {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+}
+
+#header img, #header #h4, #header #h3, #header #h2, #header #h1 {
+  -moz-animation-fill-mode: forwards;
+  -webkit-animation-fill-mode: forwards;
+  -o-animation-fill-mode: forwards;
+}
+
+#header img, #header #h4 {
+  -moz-animation: picture 1.5s;
+  -o-animation: picture 1.5s;
+  -webkit-animation: picture 1.5s;
+}
+
+#header #h1 {
+  -moz-animation: sloganh1 1s;
+  -o-animation: sloganh1 1s;
+  -webkit-animation: sloganh1 1s;
+}
+
+#header #h2 {
+  -moz-animation: sloganh2 1.5s;
+  -o-animation: sloganh2 1.5s;
+  -webkit-animation: sloganh2 1.5s;
+}
+
+#header #h3 {
+  -moz-animation: sloganh3 2s;
+  -o-animation: sloganh3 2s;
+  -webkit-animation: sloganh3 2s;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 14px;
+}
+
+body {
+  font-family: "georgia serif";
+  background: #f7f8f3;
+}
+
+h1, h2, h3 {
+  font-family: "Myriad Pro Regular";
+}
+
+h3 {
+  color: #82361f;
+}
+
+a {
+  color: #c03a17;
+  transition: all 0.3s;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+ul {
+  list-style-type: none;
+  list-style-image: url("img/puce.png");
+}
+
+.gabari {
+  max-width: 1150px;
+  margin: auto;
+  display: flex;
+  flex-flow: column nowrap;
+}
+@media only screen and (max-width: 768px) {
+  .gabari {
+    width: 100%;
+  }
+}
+
+#head {
+  display: flex;
+  width: 920px;
+  margin: auto;
+  margin-top: 30px;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+}
+@media only screen and (max-width: 768px) {
+  #head {
+    width: 100%;
+  }
+}
+#head h2 {
+  width: 20%;
+}
+@media only screen and (max-width: 768px) {
+  #head h2 {
+    width: 100%;
+    width: 50%;
+  }
+}
+#head a {
+  display: block;
+  width: 100%;
+  text-transform: uppercase;
+  background: #bf3a17;
+  color: #f7f8f3;
+  text-decoration: none;
+  padding: 15px;
+  font-family: "Myriad Pro Light";
+  font-size: 2rem;
+  border-bottom: 2px #f7f8f3 solid;
+}
+#head p {
+  font-size: 1.2rem;
+  font-style: italic;
+  align-self: center;
+}
+@media only screen and (max-width: 768px) {
+  #head p {
+    width: 100%;
+    text-align: right;
+    padding-right: 5px;
+  }
+}
+#head span {
+  font-size: 1.2rem;
+  color: #82361f;
+}
+
+#menu {
+  background: #ebead8;
+  margin: auto;
+  border-top: 4px #eae5d2 solid;
+}
+@media only screen and (max-width: 768px) {
+  #menu {
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  #menu {
+    width: 100%;
+  }
+}
+#menu:hover {
+  border-top: 4px #cdbd8a solid;
+}
+#menu ul {
+  list-style-image: none;
+  width: 920px;
+  margin: auto;
+}
+@media only screen and (max-width: 768px) {
+  #menu ul {
+    width: 100%;
+  }
+}
+#menu ul li {
+  padding: 20px 0;
+  width: 20%;
+  text-align: center;
+  border-left: 2px #f7f8f3 solid;
+}
+#menu ul li:nth-last-child(1) {
+  border-right: 2px #f7f8f3 solid;
+}
+#menu ul li:hover {
+  background: #d3c69c;
+}
+#menu ul li a {
+  color: #000;
+  text-decoration: none;
+  padding: 20px 30px;
+  font-size: 0.9rem;
+}
+@media only screen and (max-width: 768px) {
+  #menu ul li a {
+    width: 100%;
+    padding: 0;
+  }
+}
+#menu ul li a:hover {
+  color: #fff;
+}
+
+#header {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-end;
+}
+@media only screen and (max-width: 768px) {
+  #header {
+    width: 100%;
+    flex-direction: column;
+  }
+}
+#header #h1 {
+  color: #9f6756;
+  position: absolute;
+  padding-top: 35px;
+  top: 17%;
+  left: 10%;
+  font-size: 1.5rem;
+  font-family: "Myriad Pro Light";
+  animation: sloganh1 1s;
+  animation-fill-mode: forwards;
+}
+@media only screen and (max-width: 768px) {
+  #header #h1 {
+    width: 100%;
+    width: 50%;
+    position: relative;
+  }
+}
+#header #h2 {
+  position: absolute;
+  top: 22%;
+  left: 45%;
+  font-size: 4.5rem;
+  font-weight: bold;
+  font-family: "Myriad Pro Light";
+  filter: blur(5px);
+  animation: sloganh2 1.5s;
+  animation-fill-mode: forwards;
+}
+@media only screen and (max-width: 768px) {
+  #header #h2 {
+    width: 100%;
+    width: 50%;
+    position: relative;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  #header #h2 {
+    top: 23.5%;
+  }
+}
+#header #h3 {
+  color: #bf3a17;
+  position: absolute;
+  top: 27%;
+  left: 25%;
+  font-size: 4.5rem;
+  font-weight: bold;
+  font-family: "Myriad Pro Light";
+  animation: sloganh3 2s;
+  animation-fill-mode: forwards;
+}
+@media only screen and (max-width: 768px) {
+  #header #h3 {
+    width: 100%;
+    width: 50%;
+    position: relative;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  #header #h3 {
+    top: 29%;
+  }
+}
+#header #h4 {
+  position: absolute;
+  top: 33%;
+  left: 23%;
+  font-size: 1.6rem;
+  font-family: "Myriad Pro Light";
+  filter: blur(5px);
+  animation: picture 1.5s;
+  animation-fill-mode: forwards;
+}
+@media only screen and (max-width: 768px) {
+  #header #h4 {
+    width: 100%;
+    width: 50%;
+    position: relative;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  #header #h4 {
+    top: 36%;
+  }
+}
+#header img {
+  padding-right: 15%;
+  filter: blur(5px);
+  animation: picture 1.5s;
+  animation-fill-mode: forwards;
+}
+@media only screen and (max-width: 768px) {
+  #header img {
+    width: 100%;
+    padding: 0;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  #header img {
+    padding-right: 10%;
+  }
+}
+
+main {
+  background: #ebead8;
+  border-top: 4px #e2e1cf solid;
+}
+
+#content {
+  width: 920px;
+  margin: auto;
+}
+@media only screen and (max-width: 768px) {
+  #content {
+    width: 100%;
+    flex-direction: column;
+  }
+}
+#content #article {
+  width: 30%;
+  padding: 35px 20px;
+}
+@media only screen and (max-width: 768px) {
+  #content #article {
+    width: 100%;
+    padding: 20px;
+  }
+}
+#content #article p {
+  padding-top: 20px;
+}
+#content #article figure {
+  display: flex;
+  flex-flow: column wrap;
+  height: 91px;
+  width: 30%;
+  padding-top: 20px;
+}
+#content #article figure figcaption {
+  height: 15px;
+  padding: 10px;
+}
+#content #article figure a {
+  padding: 3px 10px;
+}
+#content #choose {
+  width: 30%;
+  padding: 35px 20px;
+}
+@media only screen and (max-width: 768px) {
+  #content #choose {
+    width: 100%;
+    padding: 20px;
+  }
+}
+#content #choose #bold {
+  font-weight: bold;
+}
+#content #choose p {
+  padding-top: 20px;
+}
+#content #news {
+  width: 30%;
+  padding: 35px 20px;
+}
+@media only screen and (max-width: 768px) {
+  #content #news {
+    width: 100%;
+    padding: 20px;
+  }
+}
+#content #news ul {
+  padding-top: 20px;
+}
+#content #news li {
+  padding: 5px;
+}
+
+form {
+  background: #bf3a17;
+}
+
+fieldset {
+  border: none;
+  padding: 10px 0 10px 10px;
+}
+fieldset a {
+  color: #fff;
+}
+
+label {
+  display: block;
+  color: #fff;
+  font-family: "Myriad Pro Regular";
+  font-size: 1.5rem;
+}
+
+input {
+  display: inline-block;
+}
+
+input[type=url] {
+  border: 1px #fff solid;
+  border-radius: 4px;
+  width: 75%;
+}
+
+input[type=submit] {
+  background: #f8931d;
+  color: #fff;
+  padding: 2px 10px;
+  border: none;
+  border-radius: 4px;
+}
+
+footer {
+  background: #dbd5bb;
+}
+@media only screen and (max-width: 768px) {
+  footer {
+    width: 100%;
+  }
+}
+
+#footer {
+  width: 920px;
+  margin: auto;
+}
+@media only screen and (max-width: 768px) {
+  #footer {
+    width: 100%;
+    flex-direction: column;
+  }
+}
+
+#solutions, #press, #services {
+  width: 30%;
+  margin: auto;
+  padding: 30px 20px;
+}
+@media only screen and (max-width: 768px) {
+  #solutions, #press, #services {
+    width: 100%;
+  }
+}
+#solutions ul, #press ul, #services ul {
+  padding: 20px 0;
+}
+#solutions ul li, #press ul li, #services ul li {
+  padding: 4px;
+}
+
+.link {
+  color: #5b594c;
+  margin: 10px 0;
+}
+
+#copy {
+  background: #fff;
+  width: 100%;
+}
+#copy p {
+  padding-left: 13%;
+  height: 80px;
+  line-height: 80px;
+}
+
+/*# sourceMappingURL=style.css.map */

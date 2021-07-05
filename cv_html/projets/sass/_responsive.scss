@@ -1,0 +1,19 @@
+@mixin mobile ($width){
+  @media only screen and(max-width: $width){
+    width: 100%;
+    @content;
+  }
+}
+@mixin tablette ($width){
+  @media only screen and(max-width: $width) {
+    @content;
+  }
+}
+//if else
+@mixin hover ($hover: true){
+  @if($hover){
+    border-top: $border;
+  } @else{
+    border-top: $border-dark;
+  }
+}
