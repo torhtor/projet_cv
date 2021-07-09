@@ -349,7 +349,36 @@ footer p{
         display: none;
     }
     .dip-list {
+        display: none;
+    }
+    .descrip {
+        margin-left: 12%;
+    }
+    #dokko {
+        top: 21%;
+        left: 24%;
+        width: 25%;
+    }
+    #france #ousay{
+        width: 25%;
+        left: 59%;
+    }
+    #japan, #france, #online{
         display: block;
+        text-align: center;
+    }
+    #japan img {
+        margin: auto;
+    }
+    #japan p, #france p, #online p {
+        width: 75%;
+        text-align: center;
+    }
+    #online p {
+        margin-left: 12%;
+    }
+    #hobbies p, #about-me p {
+        text-align: center;
     }
 
     #reseau{
@@ -432,9 +461,7 @@ footer p{
 /*  RESPONSIVE POUR TABLETTES */
 
 @media screen and (min-width: 769px) and (max-width: 1024px){
-    .hidden{
-        display: block;
-    }
+
     .hiddenbt {
         display: none;
     }
@@ -444,6 +471,13 @@ footer p{
     }
     aside img {
         display: none;
+    }
+    #first-aside {
+        display: none;
+    }
+    #close-aside {
+        display: block;
+        text-align: right;
     }
     #container{
         width: 100%;
